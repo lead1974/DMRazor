@@ -1,0 +1,22 @@
+﻿1. Setup Git as new repostiry:
+   a. Open Command Prompt cd C:\Andrey\WebApps\DM\DMRazor
+   git config core.autocrlf false to remove warning : warning: LF will be replaced by CRLF 
+   b. remove current git files: C:\Andrey\WebApps\DM\DMRazor>rd .git /S/Q
+   c. initiate git : C:\Andrey\WebApps\DM\DMRazor>git init
+   c. Add .gitignore to C:\Andrey\WebApps\DM\DMRazor (manually)
+   d. add everything to local repository: C:\Andrey\WebApps\DM\DMRazor>git add .
+   e. commit all first time: C:\Andrey\WebApps\DM\DMRazor>git commit -m "My First Commit"
+   f. sync with remote git repository: C:\Andrey\WebApps\DM\DMRazor>git remote add origin https://github.com/lead1974/DMRazor.git
+   g. push an existing local repository to remote repository: git push -u origin master
+
+2. Work with EF:
+add-migration initial -verbose
+dotnet ef migrations add InitialModel
+dotnet ef database update
+dotnet ef migrations remove
+//dotnet ef migrations update 0 //remove prior migration (first one in this case)
+//changing Name to StringLength(255), Required and run: 
+dotnet ef migrations add ApplyConstraints
+dotnet ef database update
+
+npm install --save-dev @fortawesome/fontawesome-free
